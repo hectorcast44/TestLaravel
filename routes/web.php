@@ -10,6 +10,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/empleados', [EmpleadoController::class, 'index']);
+Route::get('/empleados', [EmpleadoController::class, 'index'])->name('empleados.index');
 
 require __DIR__.'/settings.php';
