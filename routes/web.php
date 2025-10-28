@@ -10,6 +10,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/empleados', [EmpleadoController::class, 'index'])->name('empleados.index');
+// Rutas CRUD para empleados
+Route::resource('empleados', EmpleadoController::class);
 
 require __DIR__.'/settings.php';
