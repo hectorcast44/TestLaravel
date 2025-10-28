@@ -19,9 +19,9 @@
     <header class="bg-red-400 border-b border-gray-200">
         <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Primary">
             <div class="flex h-16 items-center justify-between">
-                <a href="{{ route('home') }}" class="text-lg font-semibold text-gray-900 hover:text-gray-700">{{ config('app.name', 'Laravel') }}</a>
+                <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-900 hover:text-gray-700">{{ config('app.name', 'Laravel') }}</a>
                 <div class="flex items-center gap-6">
-                    <a href="{{ route('home') }}" class="text-gray-700 hover:text-gray-900 transition-colors">Home</a>
+                    <a href="{{ url('/') }}" class="text-gray-700 hover:text-gray-900 transition-colors">Home</a>
                     <a href="{{ url('/empleados') }}" class="text-gray-700 hover:text-gray-900 transition-colors">Lista de empleados</a>
                 </div>
             </div>
