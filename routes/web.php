@@ -9,5 +9,5 @@ use Illuminate\Contracts\View\View;
 Route::get('/', function () {
     return view('home');
 });
-
+Route::resource('empleados', EmpleadoController::class);
 require __DIR__.'/settings.php';
