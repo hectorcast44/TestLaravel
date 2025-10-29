@@ -10,7 +10,4 @@ Route::get('/', function () {
     return view('home');
 });
 
-// Rutas CRUD para empleados
-Route::resource('empleados', EmpleadoController::class);
-
 require __DIR__.'/settings.php';
