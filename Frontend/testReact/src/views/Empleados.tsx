@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
+import TopBar from "../components/TopBar";
 
-const Empleados = () => {
+interface EmpleadosProps {
+  onLogout: () => void;
+}
+
+const Empleados = ({ onLogout }: EmpleadosProps) => {
   const [empleados, setEmpleados] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -14,10 +19,9 @@ const Empleados = () => {
         throw new Error(`Error en la petición: ${response.status}`);
       }
 
-      const dataCompleta = await response.json();
-      const empleados = dataCompleta.data;
-      setEmpleados(empleados);
+      const data = await response.json();
       console.log(empleados);
+      setEmpleados(data);
       setError(false);
     } catch (err) {
       setError(true);
@@ -30,7 +34,12 @@ const Empleados = () => {
     fetchEmpleados();
   }, []);
 
-  return <table></table>;
+  return (
+    <main>
+      <TopBar onLogout={onLogout} />
+      <table></table>
+    </main>
+  );
 };
 
 export default Empleados;
