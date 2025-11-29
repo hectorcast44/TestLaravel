@@ -3,21 +3,21 @@
 @section('content')
     <div class="max-w-2xl mx-auto space-y-6">
         <h1 class="text-2xl font-semibold">Crear Empleado</h1>
-        <form action="{{ route('empleados.store') }}" method="POST" class="space-y-4">
+        <form action="{{ route('empleados.store') }}" method="POST" class="space-y-4 pl-2">
             @csrf
             <div>
                 <label class="block text-sm font-medium text-gray-700">Nombre</label>
-                <input type="text" name="nombre" value="{{ old('nombre') }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-900 focus:ring-gray-900" required>
+                <input type="text" name="nombre" value="{{ old('nombre') }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-900 focus:ring-gray-900 p-2" required>
                 @error('nombre') <p class="text-sm text-red-600 mt-1">{{ $message }}</p> @enderror
             </div>
             <div>
                 <label class="block text-sm font-medium text-gray-700">Apellido</label>
-                <input type="text" name="apellido" value="{{ old('apellido') }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-900 focus:ring-gray-900" required>
+                <input type="text" name="apellido" value="{{ old('apellido') }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-900 focus:ring-gray-900 p-2" required>
                 @error('apellido') <p class="text-sm text-red-600 mt-1">{{ $message }}</p> @enderror
             </div>
             <div>
                 <label class="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" name="email" value="{{ old('email') }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-900 focus:ring-gray-900" required>
+                <input type="email" name="email" value="{{ old('email') }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-900 focus:ring-gray-900 p-2" required>
                 @error('email') <p class="text-sm text-red-600 mt-1">{{ $message }}</p> @enderror
             </div>
             <div class="flex items-center gap-3">
